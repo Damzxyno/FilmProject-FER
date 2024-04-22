@@ -31,7 +31,7 @@
 	height: 40px;
 }
 .company-name{
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 300;
 	color: lemonchiffon;
 }
@@ -44,7 +44,7 @@
 }
 .header-search-input{
 	height: 38px;
-	width: 500px;
+	width: 400px;
 	padding: 10px;
     border-radius: 10px 0 0 10px;
 }
@@ -57,6 +57,9 @@
 .company-name{
 	font-family: "Libre Caslon Text", serif;
 }
+.request-format{
+	padding-left: 20px;
+}
 .general-content{
 	position: relative;
     display: inline-block;
@@ -64,8 +67,8 @@
     height: 100vh;
 }
 .content-figure{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 .content-figure-image{
 	display: block;
@@ -101,7 +104,7 @@
 }
 .films-table th{
 	font-weight: 250px;
-	color: 
+	
 }
 .nav-menus{
 	position: absolute;
@@ -126,11 +129,69 @@
 .noborder{
 	border: none;
 }
+/**/
+
+.filter-section {
+    max-width: 80vw;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.filter-section-form {
+
+}
+.filter-search-input{
+	padding-bottom: 20px;
+}
+.filter-search-input{
+	width: 80%;
+	padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+ .filter-section label {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.filter-section-form-box{
+	display: flex;
+	justify-content: space-between;
+}
+.filter-section-form-box-item{
+	width: 50%;
+}
+
+.filter-section-input {
+    width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.filter-section-button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-section-button:hover {
+    background-color: #0056b3;
+}
 .general-footer{
 	background-color: var(--main-bg-color);
 	width: 100vw;
 	height: 250px;
-	padding: 0;
+	padding: 10px;
 }
 .disclaimer {
     background-color: #f8d7da;
@@ -142,36 +203,84 @@
     transition: opacity 0.5s ease-in-out; /* Add a smooth opacity transition */
     opacity: 1; /* Initial opacity value */
 }
-
 .disclaimer.hidden {
     opacity: 0;
 }
-
 .pagination {
-	width: 80vw;
+    width: 80vw;
+    margin: 20px auto;
+    align-items: center;
     display: flex;
-    justify-content: space-around; 
-    margin-top: 20px;
+    flex-wrap: wrap;
 }
-.pagination a {
+ .pagination-anchor {
     text-decoration: none;
     padding: 8px 12px;
-    margin: 0 5px;
+    margin: 4px;
     border: 1px solid #ddd;
-    color: #333;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    background-color: white;
+    border-radius: 18px;
 }
-
+.pagination a {
+	color: black;
+}
 .pagination a:hover {
-    background-color: #ddd;
+    background-color: #f5f5f5;
 }
 
 .pagination .current-page {
-    background-color: #4CAF50;
-    color: white;
     padding: 8px 12px;
-    margin: 0 5px;
-    border: 1px solid #4CAF50;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.film-form {
+    max-width: 70vw;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.form-submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-submit:hover {
+    background-color: #0056b3;
 }

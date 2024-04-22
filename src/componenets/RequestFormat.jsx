@@ -20,7 +20,7 @@ function RequestFormat() {
   }, [selectedFormat]);
 
   return (
-    <div>
+    <div className="request-format">
       <select
         value={selectedFormat}
         onChange={(e) => setSelectedFormat(e.target.value)}

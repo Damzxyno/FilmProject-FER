@@ -3,7 +3,7 @@ import Header from "../componenets/Header";
 import fetchData from "../axiosHelper";
 import { useParams } from "react-router-dom";
 import backgroundIMG from "/img/cinema-background.jpeg";
-import parseResponse from "../util";
+import parseResponse, { parseRequest } from "../util";
 import FilmFormContent from "../componenets/FilmFormContent";
 import { updateData, deleteData } from "../axiosHelper";
 import ContentWrapper from "../componenets/ContentWrapper";
@@ -32,7 +32,7 @@ function EditFilm() {
       filmData[key] = value;
     });
     const postFilmUpdate = async () => {
-      const content = await parseResponse(filmData);
+      const content = await parseRequest(filmData);
       const response = await updateData(id, content);
       alert("Film has been updated successfully.");
     };

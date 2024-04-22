@@ -18,13 +18,13 @@ function Header(){
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                {/* <nav class="nav-menus">
+                <nav className="nav-menus">
                     <Link to="/Create-Film">
-                        <i class="fa-solid fa-plus"></i>
+                        <i className="fa-solid fa-plus"></i>
                         <span>Create a new film</span>			
                     </Link>
-                </nav> */}
-                <RequestFormat />
+                    <RequestFormat />
+                </nav>
         </header>
     )
 }

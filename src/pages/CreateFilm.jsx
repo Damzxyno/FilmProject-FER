@@ -1,7 +1,7 @@
 import FilmFormContent from "../componenets/FilmFormContent";
 import ContentWrapper from "../componenets/ContentWrapper";
 import { postData } from "../axiosHelper";
-import parseResponse from "../util";
+import parseResponse, { parseRequest } from "../util";
 
 function CreateFilm(){
     const handleFilmCreation = (e) => {
@@ -10,10 +10,13 @@ function CreateFilm(){
         const formData = new FormData(formElement);
         const filmData = {};
         formData.forEach((value, key) => {
-          filmData[key] = value;
+          if (key != 'id'){
+            filmData[key] = value;
+          }
+          
         });
         const postFilmCreate = async () => {
-          const content = await parseResponse(filmData);
+          const content = await parseRequest(filmData);
           const response = await postData(null, content);
           alert("Movie has been created successfully.");
         };
