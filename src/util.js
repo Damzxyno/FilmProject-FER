@@ -2,6 +2,7 @@ import { APPLICATION_JSON, APPLICATION_XML, PLAIN_TEXT } from "./default-request
 import xml2js from 'xml2js';
 
 const parser = new xml2js.Parser();
+const builder = new xml2js.Builder();
 async function parseResponse(body) {
     const contentType = getContentType();
     if (contentType === APPLICATION_JSON) {
@@ -30,7 +31,14 @@ async function parseResponse(body) {
         }
     }
 }
-
+async function serializeToXML(data) {
+    try {
+        return builder.buildObject(data);
+    } catch (ex) {
+        console.error(ex);
+        throw ex;
+    }
+}
 async function parseRequest(body){
     const contentType = getContentType();
     if (contentType === APPLICATION_JSON) {
@@ -47,6 +55,12 @@ async function parseRequest(body){
         plainText += `<stars>[${body.stars}]`;
         plainText += `<review>[${body.review}]`;
         return plainText + "]";
+    }
+    if (contentType === APPLICATION_XML){
+        const  value = {
+            'Film' : body
+        }
+        return await serializeToXML(value)
     }
 }
 
