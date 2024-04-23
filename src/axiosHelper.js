@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getContentType } from "./util"; 
 // const BASE_URL = "http://localhost:8080/DamzxynoFilmsApiServletProject/Films";
-const BASE_URL = "http://34.16.135.81:8080/DamzxynoFilmsApiServletProject/Films";
+const BASE_URL = "http://34.125.55.146:8080/DamzxynoFilmsApiServletProject/Films";
 const fetchData = async (path, parameters) => {
     try {
       const url = path ? `${BASE_URL}/${path}` : BASE_URL;

@@ -11,9 +11,9 @@ async function parseResponse(body) {
     if (contentType === APPLICATION_XML) {
         try {
             const parsedObject = await parser.parseStringPromise(body.data);
-            if (parsedObject.filmDTO){
+            if (parsedObject.Film){
                 return {
-                    data: parsedObject.filmDTO
+                    data: parsedObject.Film
                 }
             }
             return {
